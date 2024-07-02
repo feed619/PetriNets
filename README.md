@@ -8,3 +8,8 @@ Clone the repository:
     ```bash
     git clone https://github.com/feed619/PetriNets
     ```
+## Usage
+1. Start the application:
+    ```
+    open Petri.exe
+    ```
