@@ -13,3 +13,4 @@ Clone the repository:
     ```
     open Petri.exe
     ```
+## And
