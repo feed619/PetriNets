@@ -42,7 +42,6 @@ private:
     bool active = false;
     bool CLICK = false;
     bool include = false;
-    bool Pressclick = false;
     int ARROW_BUTTON = 0;
 
     void update(sf::Event &event);

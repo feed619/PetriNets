@@ -5,6 +5,5 @@ int main()
 {
     Source source;
     source.start();
-
     return 0;
 }

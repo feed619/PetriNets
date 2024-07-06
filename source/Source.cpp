@@ -5,7 +5,6 @@ Source::Source()
     window = new sf::RenderWindow(sf::VideoMode(this->width, this->height), "Network Petri", sf::Style::None);
 
     window->setFramerateLimit(this->fps);
-    window->setVerticalSyncEnabled(true);
 
     this->Main_petri = nullptr;
     this->Main_square = nullptr;
@@ -631,7 +630,7 @@ void Source::Petri_active()
     int x = 0;
     for (Petri *circle : this->vector_circles)
     {
-        if (circle->getSprite().getGlobalBounds().contains(sf::Vector2f(this->mou_poz.x, this->mou_poz.y)) and this->Pressclick == false)
+        if (circle->getSprite().getGlobalBounds().contains(sf::Vector2f(this->mou_poz.x, this->mou_poz.y)))
         {
             if (sf::Mouse::isButtonPressed(sf::Mouse::Left) and this->active == false)
             {
@@ -676,17 +675,6 @@ void Source::Petri_active()
                 circle->BTN_ACTIVE = false;
                 this->active = false;
             }
-        }
-
-        else
-        {
-
-            if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-            {
-                this->Pressclick = true;
-            }
-            else
-                this->Pressclick = false;
         }
         ++x;
     }
@@ -736,16 +724,6 @@ void Source::Petri_active()
                 square->BTN_ACTIVE = false;
                 this->active = false;
             }
-        }
-        else
-        {
-
-            if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
-            {
-                this->Pressclick = true;
-            }
-            else
-                this->Pressclick = false;
         }
         ++y;
     }
@@ -844,7 +822,7 @@ void Source::Arrow_move(Arrow *arr)
 void Source::Petri_network()
 {
     int i = 0;
-    std::vector<Petri *> Active_squares;
+    std::vector<Petri*> Active_squares;
 
     for (Petri *square : this->vector_squares)
 
